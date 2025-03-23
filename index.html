@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etape 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function copyMorse() {
+            const morseText = document.getElementById("morse-text").innerText;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(morseText).then(() => {
+                    alert("Texte morse copié !");
+                }).catch((err) => {
+                    console.error("Erreur lors de la copie :", err);
+                    alert("Erreur lors de la copie du texte.");
+                });
+            } else {
+                alert("Le presse-papier n'est pas accessible dans ce navigateur.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="../logo.png" alt="Logo" class="logo"> 
+    </div>
+    <div class="container">
+        <h1>Indice 2 🤠</h1>
+        <p>Déchiffrer cela : <span id="morse-text" class="morse">-.-. .- -. .- .--. é / -.. ..- / .--. .-. . -- .. . .-. / é - .- --. . </span></p>
+        
+        <h2> Rendez-vous à cet endroit </h2> 
+
+    </div>
+    <button onclick="copyMorse()">Copier le Code</button>
+</body>
+</html>
